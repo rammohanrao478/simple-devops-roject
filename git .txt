@@ -1,0 +1,139 @@
+ git config --global user.name "rammohan478"
+ git config --global user.email "mohanlucky7777@gmail.com"
+  allows developers to work simulteniously
+  the following are the types of vcs
+1.centralized version control system
+2.distribujted version control system
+     centalised version control system uses a central server to
+to store all files 
+git terminalogy:
+================
+git is a client server architecture
+here client ====>git bash
+server====>git hub
+repository:group of projectfiles to store one singlearea and each project has one repository
+git hub has n noof repositories
+fork:projects are copied fom one account to another
+git follows two types of protocalls ====>https and ssh
+
+git workflow:
+ ------------
+git clone url
+touch abc.txt
+git status
+git add.
+git commit -m "add a file"
+git push origin master
+git log
+git pull url of github
+
+head always points to latest commit
+when ever we want to push or pull files .
+first we clone and if any change is present in remote area
+ then we pull the remote areasimply we can say that local
+ and remote areas having same data
+
+if you add a file in remote then we have to go git bash 
+we execute the command 
+git pull url or git pull origin master
+
+git fetch and merge commands are used for the files copy from remote to local
+
+but the difference is git fetch command is always follows the git merge command
+cat >> ram ---->he is belongs to iaas admin team :this is one type of push command
+in this way we can do the localchanges to remote as well remote changes local
+1.how to undo changes in workig area?
+file===>modify==>working area
+these modifications are not required we enter the following command
+-->git checkout filename
+2.how to undo the changes in staging area?
+--->git reset commit id,this commit id is present at git logs
+this command is very dangirous command
+
+
+branching stratagies in your oranization
+ here bottom to top approach is present
+ =======================================
+devlope code--->>merge with team-->>merge with master--->>remotr
+ every developer have the one feature branch ----for all the developers have one team branch
+ this team branch is need to merge with master
+ one additonal branch is present here---hotfix/bugfix
+ any errors are present in code this hotfix/bugfix is used.after resolving the errors it is merge with 
+ master branch
+ whenever the completion of feature or application he create a branch .the branch is release
+ 
+ master branch is adefault branch
+ development branch(dev) : every team has their own branch===>which is created from master barach
+ feture branch:everydeveloper has their own branch==>which is crfeated from master branch
+ hotfix/bugfix banch===>which is created when errors or bugs are present ===>which is created from master===>
+ after error free hotfix/bugfix will be deleted.
+ release branch===>every rtelease has one branch with version==>which is created from master branch
+ once release push to remote==>release branch will delete  
+ branch:to develop the code of our project
+
+ how to create tghe branch locally ?
+ git branch branch name
+ how to push local branch remote ?
+ git push origin barach name
+ how to delete local branch ?
+ git branch -d branchname
+ how to go to inside the branch
+ git checkout branch name
+ how to delete the branch remotely?
+  git push origin -d release  
+  
+  merges
+  =======
+  merging stratagies locally:
+  ===========================
+  1.fast farword merge:
+  ====================
+    now we are in feature branch
+  toch pl
+  git status
+  git add .
+  git commit -m "add"
+  git checkout dev --> now we are in dev branch
+  git merge feture --->now we are merge with dev
+  ---->this type of merge is called fast farword merge
+  now this can be merged in git logs
+ 
+ now we need to merge dev branch with master===>now we goto master branch==>git merge dev===>git push origin master
+
+2.two way recursive merge:
+--------------------------
+git checkout  feature
+touch ram1
+git add .
+git commit -m "add"
+git checkout dev
+touch ram2
+git add .
+git commit -m "add"
+git merge feture--->nowvi editor is opened --->:wq!--->then we got the message like this "merge made by recursive stratagy"
+git checkout master
+touch ram3
+git add .
+git commit -m "add"
+git merge dev--->nowvi editor is opened --->:wq!--->then we got the message like this "merge made by recursive stratagy"
+git push origin master --->all the operations are completed here
+
+git rebase:it can disable the versioning concept
+
+git cherry-pick:
+================
+it picks a commit from one branch and apply it to another branch without doing merge
+git cherry-pick commit id
+
+git checkout feature
+touch ram1
+git add .
+git commit -m "add"
+git log --->copy the commit id
+git checkout dev
+git cherry-pick commit id
+git log --->copy the commit id
+git checkout master
+git cherry-pick commit id
+git push origin master
+

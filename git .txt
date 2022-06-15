@@ -1,3 +1,4 @@
+ git notes
  git config --global user.name "rammohan478"
  git config --global user.email "mohanlucky7777@gmail.com"
   allows developers to work simulteniously
